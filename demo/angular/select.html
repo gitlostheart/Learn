@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+
+	<form action="data.php" method="post">
+		<select ng-model="selFav" ng-options="y for (x,y) in fav" name="fav">
+		</select>
+		<!-- <select ng-model="selFav" name="fav">
+			<option ng-repeat="(x,y) in fav" value="{{x}}">{{y}}</option>
+		</select> -->
+		<input type="submit" value="提交">
+	</form>
+
+	<h1>你选择的是: {{selFav}}</h1>
+
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+   /*$scope.fav = {
+	    "0" : "苹果",
+	    "1" : "梨子",
+	    "2" : "香蕉",
+	    "3" : "菠萝",
+	    "4" : "香瓜",
+	};*/
+	$scope.fav=[];
+	$scope.fav[0]="苹果";
+	$scope.fav[1]="梨子";
+	$scope.fav[2]="香蕉";
+	$scope.fav[3]="菠萝";
+	$scope.fav[4]="香瓜";
+});
+</script>
+
+<p>该实例演示了使用 ng-options  指令来创建下拉列表，选中的值是一个对象。</p>
+</body>
+</html>

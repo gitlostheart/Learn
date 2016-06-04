@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>CSS hack</title>
+		<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		p{
+			color:red !important;
+			color:blue;/*//在 IE7 浏览器中，文字呈现红色；而 IE6 中呈现蓝色。*/
+			display: block;
+			display: inline;
+			display: table;
+			
+		}		
+		</style>
+		
+	</head>
+	<body>
+		
+		<p>
+			测试数据
+		</p>
+		<!--
+			css hack大致有3中表现形式
+			1.css属性前缀法
+			2.选择器前缀法
+			3.IE条件注释法
+			
+			属性前缀法,即类内部hack 例如IE6能识别下划线"_"和星号"*",IE7能识别星号"*",但不能识别下划线"_",IE6-9都认识"\9",但firefox前述三个都不能认识.
+			选择器前缀法,即选择器hack:例如IE6能识别*html .class{},IE7能识别*+html .class{} 或者*.first-child+html .class{}
+			
+		-->
+	
+	</body>
+</html>

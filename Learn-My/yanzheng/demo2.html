@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>demo2</title>
+	<!-- Include the FontAwesome CSS if you want to use feedback icons provided by FontAwesome -->
+    <link rel="stylesheet" href="http://libs.useso.com/js/font-awesome/4.2.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.css"/>
+    <link rel="stylesheet" href="dist/css/formValidation.css"/>
+	<link rel="stylesheet" type="text/css" href="css/default.css">
+	<!--[if IE]>
+		<script src="http://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	
+	<!--<div class="htmleaf-container">-->
+		
+		<!--<div class="container">-->
+	        <!--<div class="row">-->
+	            <!-- form: -->
+	            <!--<section>-->
+	                
+	                <!--<div class="col-lg-8 col-lg-offset-2">-->
+	                    <form id="defaultForm" method="post" action="#" class="form-horizontal">
+	                        <!--<fieldset>
+	                            <legend>Not Empty validator</legend>-->
+
+	                       
+	                            <!--<div class="form-group">-->
+	                                <!--<label class="col-lg-3 control-label">Country</label>-->
+	                                <div class="col-lg-5">
+	                                    <select class="form-control" name="country">
+	                                        <option value="">-- Select a country --</option>
+	                                        <option value="fr">France</option>
+	                                        <option value="de">Germany</option>
+	                                        <option value="it">Italy</option>
+	                                        <option value="jp">Japan</option>
+	                                        <option value="ru">Russia</option>
+	                                        <option value="gb">United Kingdom</option>
+	                                        <option value="us">United State</option>
+	                                    </select>
+	                                </div>
+	                            <!--</div>-->
+
+	                          
+	                        <!--</fieldset>-->
+
+	                        
+
+
+	                      
+
+	                        <div class="form-group">
+	                            <div class="col-lg-9 col-lg-offset-3">
+	                                <button type="submit" class="btn btn-primary">Submit</button>
+	                            </div>
+	                        </div>
+	                    </form>
+	                <!--</div>-->
+	            <!--</section>-->
+	            <!-- :form -->
+	        <!--</div>-->
+	    <!--</div>-->
+
+	    
+	<!--</div>-->
+	
+	<script type="text/javascript" src="vendor/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="dist/js/formValidation.js"></script>
+    <script type="text/javascript" src="dist/js/framework/bootstrap.js"></script>
+    <script type="text/javascript" src="dist/js/language/zh_CN.js"></script>
+    <script type="text/javascript">
+		$(document).ready(function() {
+		    $('#defaultForm').formValidation({
+		        message: 'This value is not valid',
+		        icon: {
+		            valid: 'glyphicon glyphicon-ok',
+		            invalid: 'glyphicon glyphicon-remove',
+		            validating: 'glyphicon glyphicon-refresh'
+		        },
+		        fields: {
+		            username: {
+		                message: 'The username is not valid',
+		                validators: {
+		                    notEmpty: {
+		                        message: 'The username is required and can\'t be empty'
+		                    },
+		                    stringLength: {
+		                        min: 6,
+		                        max: 30,
+		                        message: 'The username must be more than 6 and less than 30 characters long'
+		                    },
+		                    regexp: {
+		                        regexp: /^[a-zA-Z0-9_\.]+$/,
+		                        message: 'The username can only consist of alphabetical, number, dot and underscore'
+		                    }
+		                }
+		            },
+		            country: {
+		                validators: {
+		                    notEmpty: {
+		                        message: 'The country is required and can\'t be empty'
+		                    }
+		                }
+		            },
+		            acceptTerms: {
+		                validators: {
+		                    notEmpty: {
+		                        message: 'You have to accept the terms and policies'
+		                    }
+		                }
+		            },
+		            email: {
+		                validators: {
+		                    notEmpty: {
+		                        message: 'The email address is required and can\'t be empty'
+		                    },
+		                    emailAddress: {
+		                        message: 'The input is not a valid email address'
+		                    }
+		                }
+		            },
+		            website: {
+		                validators: {
+		                    uri: {
+		                        message: 'The input is not a valid URL'
+		                    }
+		                }
+		            },
+		            phoneNumberUS: {
+		                validators: {
+		                    phone: {
+		                        message: 'The input is not a valid US phone number'
+		                    }
+		                }
+		            },
+		            phoneNumberUK: {
+		            	validators: {
+		            		phone: {
+		            			message: 'The input is not a valid UK phone number',
+		            			country: 'GB'
+		            		}
+		            	}
+		            },
+		            color: {
+		                validators: {
+		                    color: {
+		                        type: ['hex', 'rgb', 'hsl', 'keyword'],
+		                        message: 'Must be a valid %s color'
+		                    }
+		                }
+		            },
+		            colorAll: {
+		                validators: {
+		                    color: {}
+		                }
+		            },
+		            zipCode: {
+		                validators: {
+		                    zipCode: {
+		                        country: 'US',
+		                        message: 'The input is not a valid US zip code'
+		                    }
+		                }
+		            },
+		            password: {
+		                validators: {
+		                    notEmpty: {
+		                        message: 'The password is required and can\'t be empty'
+		                    }
+		                }
+		            },
+		            confirmPassword: {
+		                validators: {
+		                    notEmpty: {
+		                        message: 'The confirm password is required and can\'t be empty'
+		                    },
+		                    identical: {
+		                        field: 'password',
+		                        message: 'The password and its confirm are not the same'
+		                    }
+		                }
+		            },
+		            ages: {
+		                validators: {
+		                    lessThan: {
+		                        value: 100,
+		                        inclusive: true,
+		                        message: 'The ages has to be less than 100'
+		                    },
+		                    greaterThan: {
+		                        value: 10,
+		                        inclusive: false,
+		                        message: 'The ages has to be greater than or equals to 10'
+		                    }
+		                }
+		            }
+		        }
+		    });
+		});
+	</script>
+</body>
+</html>

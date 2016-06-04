@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>Bootstrap Tree View</title>
+		<link href="http://libs.useso.com/js/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/bootstrap-treeview.css" rel="stylesheet">
+	</head>
+
+	<body>
+		<div class="container">
+			<h1>Bootstrap Tree View - DOM Tree</h1>
+			<br/>
+			<div class="row">
+				<div class="col-sm-12">
+					<label for="treeview"></label>
+					<div id="treeview" />
+				</div>
+			</div>
+		</div>
+		<script src="http://libs.useso.com/js/jquery/2.1.1/jquery.min.js"></script>
+		<script src="js/bootstrap-treeview.js"></script>
+		<script type="text/javascript">
+			function buildDomTree() {
+				var data = [];
+
+				function walk(nodes, data) {
+					if (!nodes) {
+						return;
+					}
+					console.log(nodes);
+					$.each(nodes, function(id, node) {
+						//        	var id=id2;
+						console.log(id, node);
+						var obj = {
+							id: id,
+							text: node.nodeName + " - " + (node.innerText ? node.innerText : ''),
+							tags: [node.childElementCount > 0 ? node.childElementCount + ' child elements' : '']
+						};
+						if (node.childElementCount > 0) {
+							obj.nodes = [];
+							walk(node.children, obj.nodes);
+						}
+						data.push(obj);
+					});
+				}
+				walk($('html')[0].children, data);
+				return data;
+			}
+			$(function() {
+				var obj = {
+					'name': 'xiaoming',
+					'data': {
+						'age': 18,
+						'sex': "M",
+						'class': {
+							'className': "yinianji",
+							'number': 12
+						}
+					}
+				}
+				var data1 = [];
+
+				function eachF(obj) {
+					$.each(obj, function(key, value) {
+						if (typeof value == "object") {
+							eachF(value);
+						} else {
+							//			      				consoleLog(key,value);
+							data1[key] = value;
+						}
+					});
+				}
+				eachF(obj);
+				for (k in data1) {
+					console.log(k, data1[k]);
+				}
+
+				function consoleLog(v1, v2) {
+					console.log(v1, v2)
+				}
+				//			console.log(buildDomTree());
+				/*   var options = {
+			          bootstrap2: false, 
+			          showTags: true,
+			          levels: 5,
+			          data: buildDomTree()
+			        };
+			*/
+			var arr1 = [1,3,5,4,]
+			var arr2 = [34,56,76]
+			
+			
+				$('#treeview').treeview(options);
+			});
+		</script>
+	</body>

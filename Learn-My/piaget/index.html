@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>转动 世界由你掌握</title>
+    <link rel="stylesheet" href="http://image.tuolar.com/lakuo/src/livemook-css/style.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="http://image.tuolar.com/lakuo/src/livemook-css/goble.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="css/clear.css" media="screen">
+    <link rel="stylesheet" href="css/jquery.fullPage.css" media="screen">
+    <link rel="stylesheet" href="css/style.css" media="screen">
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="js/jquery-ui-1.10.3.min.js"></script>
+    <script src="js/jquery.fullPage.min.js"></script>
+    <script src="js/html5media.min.js"></script>
+    <script src="js/index.js"></script>
+</head>
+<body>
+<div id="fullpage">
+    <div class="section">
+        <div id="header" style="width:100%;background:#000;height:28px;position: absolute;top:0;z-index:300">
+            <div id="top" style="margin:2px auto;width:1090px;">
+                <form id="subnav_search_form">
+                    <ul class="search">
+                        <li style="border-left:3px solid #000;">
+                            <div style="background-color: white; border:1px solid #666; height:18px;padding:2px 0; _padding:1px 0 0 0; ">
+                                <input id="search_input" onblur="if (this.value == '') {this.value = 'SEARCH';}" onfocus="if (this.value == 'SEARCH') {this.value = '';}" name="s" type="text" class="left text" value="SEARCH">
+                                <button onclick="if($('#search_input').value == 'SEARCH') { $('#search_input').value = ''; } $('#subnav_search_form').submit(); return false;"></button>
+                                <div style="clear:both"></div>
+                            </div>
+                        </li>
+                    </ul>
+                </form>
+                <ul>
+                    <li style="border-right:3px solid #000;"><a href="http://www.livemook.com/" title="拉阔时尚" target="_blank">LIVEMOOK</a>
+                    </li>
+                    <li style="border-right:3px solid #000;"><a href="http://www.livemook.com/fashion/" title="查看 时尚 下的所有文章" target="_blank">时尚</a></li>
+                    <li style="border-right:3px solid #000;"><a href="http://www.livemook.com/model/" title="查看 超模 下的所有文章" target="_blank">超模</a></li>
+                    <li style="border-right:3px solid #000;"><a href="http://www.livemook.com/beauty/" title="查看 妆容 下的所有文章" target="_blank">妆容</a></li>
+                    <li style="border-right:3px solid #000;"><a href="http://www.livemook.com/men/" title="查看 男士 下的所有文章" target="_blank">男士</a></li>
+                    <li style="border-right:3px solid #000;"><a href="http://www.livemook.com/JewelryWatch/" title="查看 珠宝腕表 下的所有文章" target="_blank">珠宝腕表</a></li>
+                    <li style="border-right:3px solid #000;"><a href="http://www.livemook.com/global/" title="查看 倾城 下的所有文章" target="_blank">倾城</a></li>
+                    <li style="border-right:3px solid #000;"><a href="http://www.livemook.com/celebrity/" title="查看 名流 下的所有文章" target="_blank">名流</a></li>
+                    <li style="border-right:3px solid #000;"><a href="http://www.livemook.com/cars/" title="查看 名车 下的所有文章" target="_blank">名车</a></li>
+                    <li style="border-right:3px solid #000;"><a href="http://www.livemook.com/wedding/" title="查看 新娘 下的所有文章" target="_blank">新娘</a></li>
+                    <li style="border-right:3px solid #000;"><a href="http://www.livemook.com/shows/" title="查看 秀场 下的所有文章" target="_blank">秀场</a></li>
+                    <li style="border-right:3px solid #000;"><a href="http://www.livemook.com/album/" title="查看 专题 下的所有文章" target="_blank">专题</a></li>
+                    <li style="border-right:3px solid #000;"><a href="http://www.livemook.com/wp-post.php" target="_blank">发我钟意</a></li>
+                </ul>
+            </div>
+            &lt;!– END HEADER –&gt;
+        </div>
+        <!--<img src="images/bg/bg1.gif" width="100%" height="100%" alt="">-->
+
+        <div class="wrap wrap1">
+            <img src="images/bg/bg1.jpg" width="1980" height="1080" alt="">
+        </div>
+    </div>
+    <div class="section">
+        <div class="wrap wrap2">
+            <img src="images/bg/bg2.jpg" width="1980" height="1080" alt="">
+            <!--<embed id="video_play" src="http://yuntv.letv.com/bcloud.swf" allowFullScreen="true" quality="high" width="660" height="360"
+                   align="middle" allowScriptAccess="always"
+                   flashvars="uu=e2e67fe5fd&vu=e903c481fc&pu=ed1925b86e&auto_play=0&gpcflag=1&width=660&height=360"
+                   type="application/x-shockwave-flash" wmode="opaque"></embed>-->
+            <div id="video_play">
+                <video id="video_center" width="660" height="360" src="video.mp4" preload="auto" loop="loop" >
+                    <!--<source src="video.mp4" type="video/mp4" />-->
+                    <!--<object data="video.mp4" width="660" height="360">
+                        <embed width="660" height="360" src="video.mp4" wmode="opaque">
+                    </object>-->
+                </video>
+            </div>
+
+
+        </div>
+    </div>
+    <div class="section">
+        <div class="wrap wrap3">
+            <img src="images/bg/bg3.jpg" width="1980" height="1080" alt="">
+        </div>
+    </div>
+    <div class="section">
+        <div class="wrap wrap4">
+            <img src="images/bg/bg4.jpg" width="1980" height="1080" alt="">
+        </div>
+    </div>
+    <div class="section">
+        <div class="wrap wrap5">
+            <img src="images/bg/bg5.jpg" width="1980" height="1080" alt="">
+        </div>
+    </div>
+    <div class="section">
+        <div class="wrap wrap6">
+            <img src="images/bg/bg6.jpg" width="1980" height="1080" alt="">
+        </div>
+    </div>
+    <div class="section">
+        <div class="wrap wrap7">
+            <img src="images/bg/bg7.jpg" width="1980" height="1080" alt="">
+        </div>
+    </div>
+    <div class="section">
+        <div class="wrap wrap8">
+            <img src="images/bg/bg8.jpg" width="1980" height="1080" alt="">
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

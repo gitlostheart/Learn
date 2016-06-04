@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery-1.11.0.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			$(function(){
+				$.ajax({
+					type:"post",
+					url:"server.php",
+					async:false,
+					data:{"username":"xiaoming","password2":"12345"},
+					success:function(data){
+						try{
+							console.log(JSON.parse(data))
+						}catch(e){
+							console.log(e);
+							//TODO handle the exception
+						}
+//						document.write(JSON.parse(data));
+
+					}
+				});
+			});
+		</script>
+	</head>
+	<body>
+		
+		
+		
+	</body>
+</html>
